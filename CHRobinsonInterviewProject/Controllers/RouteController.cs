@@ -15,11 +15,18 @@ namespace CHRobinsonInterviewProject.Controllers
     public class RouteController : ControllerBase
     {
         private CountryRepository _countries = new CountryRepository();
+        private NeighboursRepository _neighbours = new NeighboursRepository();
+        private RouteRepository _route = new RouteRepository();
 
         [HttpGet("{destinationCountryCode}")]
-        public List<Country> GetRoute(string destinationCountryCode)
+        public ActionResult GetRoute(string destinationCountryCode)
         {
-            return _countries.GetAllCountries();
+            var val = new { destination = destinationCountryCode, list = _route.RouteFromUsaToDestination(destinationCountryCode) };
+            if(val.list == null)
+            {
+                return NotFound();
+            }
+            return Ok(val);
         }
     }
 }

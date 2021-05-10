@@ -10,7 +10,7 @@ namespace CHRobinson.Data.Repositories
 {
     public class CountryRepository : ICountryRepository
     {
-        List<Country> countries;
+        private List<Country> countries;
         public CountryRepository()
         {
             countries = new List<Country>()

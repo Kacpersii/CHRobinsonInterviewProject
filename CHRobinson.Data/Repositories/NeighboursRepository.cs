@@ -10,7 +10,7 @@ namespace CHRobinson.Data.Repositories
 {
     public class NeighboursRepository : INeighboursRepository
     {
-        List<Neighbours> neighbours;
+        private List<Neighbours> neighbours;
 
         private CountryRepository _countries = new CountryRepository();
 
@@ -45,8 +45,8 @@ namespace CHRobinson.Data.Repositories
 
         public bool AreNeighbours(int id1, int id2)
         {
-            neighbours.Find(n => (n.FirstNeighbour.Id == id1 && n.SecondNeighbour.Id == id2) || (n.FirstNeighbour.Id == id2 && n.SecondNeighbour.Id == id1));
-            return neighbours.Count > 0;
+            var result = neighbours.Find(n => (n.FirstNeighbour.Id == id1 && n.SecondNeighbour.Id == id2) || (n.FirstNeighbour.Id == id2 && n.SecondNeighbour.Id == id1));
+            return result != null;
         }
     }
 }
