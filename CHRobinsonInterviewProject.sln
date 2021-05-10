@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHRobinsonInterviewProject", "CHRobinsonInterviewProject\CHRobinsonInterviewProject.csproj", "{8728F81F-71E6-487E-845E-DC12F64E2B9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHRobinson.Data", "CHRobinson.Data\CHRobinson.Data.csproj", "{564FAB79-A148-48B2-910E-F94318CD0FA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8728F81F-71E6-487E-845E-DC12F64E2B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8728F81F-71E6-487E-845E-DC12F64E2B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8728F81F-71E6-487E-845E-DC12F64E2B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564FAB79-A148-48B2-910E-F94318CD0FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564FAB79-A148-48B2-910E-F94318CD0FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564FAB79-A148-48B2-910E-F94318CD0FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564FAB79-A148-48B2-910E-F94318CD0FA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
