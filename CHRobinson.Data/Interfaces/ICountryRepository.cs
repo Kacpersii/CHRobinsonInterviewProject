@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace CHRobinson.Data.Interfaces
 {
-    interface ICountryRepository
+    public interface ICountryRepository
     {
         List<Country> GetAllCountries();
         Country GetCountry(int id);
         Country GetCountryByCode(string code);
+        bool AreNeighbours(int id1, int id2);
     }
 }

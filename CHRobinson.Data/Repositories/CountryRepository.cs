@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CHRobinson.Data.Repositories
 {
-    class CountryRepository : ICountryRepository
+    public class CountryRepository : ICountryRepository
     {
         List<Country> countries;
         public CountryRepository()
@@ -52,6 +52,15 @@ namespace CHRobinson.Data.Repositories
                 can, usa, mex, blz, gtm, slv, hnd, nic, cri, pan
             };
         }
+
+        public bool AreNeighbours(int id1, int id2)
+        {
+            var firstCountry = countries.Find(c => c.Id == id1);
+            var secondCountry = countries.Find(c => c.Id == id2);
+
+            return firstCountry.IsNeighbour(secondCountry);
+        }
+
         public List<Country> GetAllCountries()
         {
             return countries;
