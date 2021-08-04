@@ -1,5 +1,6 @@
 ﻿using CHRobinson.Data.Models;
 using CHRobinson.Data.Repositories;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,8 +19,9 @@ namespace CHRobinsonInterviewProject.Controllers
         private NeighboursRepository _neighbours = new NeighboursRepository();
         private RouteRepository _route = new RouteRepository();
 
+        [EnableCors]
         [HttpGet("{destinationCountryCode}")]
-        public ActionResult GetRoute(string destinationCountryCode)
+        public IActionResult GetRoute(string destinationCountryCode)
         {
             var val = new { destination = destinationCountryCode, list = _route.RouteFromUsaToDestination(destinationCountryCode) };
             if(val.list == null)
