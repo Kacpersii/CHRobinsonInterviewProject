@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CHRobinsonInterviewProject.Controllers
 {
-    [Route("")]
+    [Route("api/[controller]")]
     [ApiController]
     public class RouteController : ControllerBase
     {
@@ -23,6 +23,7 @@ namespace CHRobinsonInterviewProject.Controllers
         [HttpGet("{destinationCountryCode}")]
         public IActionResult GetRoute(string destinationCountryCode)
         {
+            destinationCountryCode = destinationCountryCode.ToUpper();
             var val = new { destination = destinationCountryCode, list = _route.RouteFromUsaToDestination(destinationCountryCode) };
             if(val.list == null)
             {

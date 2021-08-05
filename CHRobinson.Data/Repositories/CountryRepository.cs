@@ -35,12 +35,19 @@ namespace CHRobinson.Data.Repositories
 
         public Country GetCountry(int id)
         {
-            return countries.First(c => c.Id == id);
+            return countries.SingleOrDefault(c => c.Id == id);
         }
 
         public Country GetCountryByCode(string code)
         {
-            return countries.First(c => c.Code == code);
+            code = code.ToUpper();
+            return countries.SingleOrDefault(c => c.Code == code);
+        }
+
+        public Country GetCountryByName(string name)
+        {
+            name = name.ToLower();
+            return countries.SingleOrDefault(c => c.Name.ToLower() == name);
         }
     }
 }
